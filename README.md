@@ -5,6 +5,6 @@
 
 ## Used tensorflow to train the model.
 ## Created beautiful vizualization of graphs and accuracy growth in tensorboard.
-## Used Beholder to see whoch nodes are being trained and which are useless.
+## Used Beholder to see which nodes are being trained and which are useless.
 ## Used pickle to load and train imgaes after augmentation in Keras.
 
