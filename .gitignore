@@ -1,1 +1,11 @@
 dataset/
+X_test.pickle/
+X_train.pickle/
+y_test.pickle/
+y_train.pickle/
+.ipynb_checkpoints/
+fourteen/
+savedmodel8/
+savedmodel14/
+eight/
+first/

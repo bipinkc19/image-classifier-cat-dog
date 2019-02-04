@@ -1,0 +1,49 @@
+#     conv1 = conv_layer(x_image, 1, 32, "conv1")
+#     conv2 = conv_layer(conv1, 32, 64, "conv2")
+#     conv3 = conv_layer(conv2, 64, 128, "conv3")
+#     conv4 = conv_layer(conv3, 128, 256, "conv4")
+#     conv5 = conv_layer(conv4, 256, 128, "conv5")
+#     conv6 = conv_layer(conv5, 128, 64, "conv6")
+#     conv_out = conv_layer(conv6, 64, 32, "convout")
+
+#     flattened, num = flatten_layer(conv_out)
+
+
+#     fc1 = fc_layer(flattened, num, 1024, "fc1")
+#     relu1 = tf.nn.relu(fc1)
+
+#     tf.summary.histogram("fc1/relu1", relu1)
+
+#     final = fc_layer(relu1, 1024, 2, "fc2")
+    
+#     tf.summary.histogram("fc1/relu_final", final)
+#     return final
+
+# def mnist_model(learning_rate): #learning_rate, use_two_fc, use_two_conv, hparam):
+# def conv_layer(input, size_in, size_out, name="conv"):
+#     with tf.name_scope(name):
+#         w = tf.Variable(tf.truncated_normal([5, 5, size_in, size_out], stddev=0.1), name='{}_w'.format(name))
+#         b = tf.Variable(tf.constant(0.1, shape=[size_out]), name='{}_b'.format(name))
+#         conv = tf.nn.conv2d(input, w, strides=[1, 2, 2, 1], padding="SAME")
+#         act = tf.nn.relu(conv + b)
+#         tf.summary.histogram("weights", w)
+#         tf.summary.histogram("biases", b)
+#         tf.summary.histogram("activations", act)
+#         return tf.nn.max_pool(act, ksize=[1, 4, 4, 1], strides=[1, 2, 2, 1], padding="SAME")
+
+# def fc_layer(input, size_in, size_out, name="fc"):
+#     with tf.name_scope(name):
+#         w = tf.Variable(tf.truncated_normal([size_in, size_out], stddev=0.1), name='{}_w'.format(name))
+#         b = tf.Variable(tf.constant(0.1, shape=[size_out]), name='{}_b'.format(name))
+#         act = tf.matmul(input, w) + b
+#         tf.summary.histogram("weights", w)
+#         tf.summary.histogram("biases", b)
+#         tf.summary.histogram("activations", act)
+#         return act
+
+# def flatten_layer(conv_output):
+#     with tf.name_scope("Falttened"):
+#         layer_shape = conv_output.get_shape()
+#         num_features = layer_shape[1:4].num_elements()
+#         flatten_conv = tf.reshape(conv_output,[-1,num_features])
+#         return flatten_conv,num_features
