@@ -9,3 +9,7 @@ savedmodel8/
 savedmodel14/
 eight/
 first/
+X_test.pickle/
+y_test.pickle/
+X_train.pickle/
+y_train.pickle/
